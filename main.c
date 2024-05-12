@@ -17,7 +17,7 @@ int main(){
 	size_t layers;//Initialize the number of layers
 	while(1){//Run the code forever
 		while(1){//Ask for the value of the atomic number and keep asking until getting a non-zero number
-			printf("Atomic number: "),scanf("%u",&n);//Ask for the value of the atomic number
+			printf("Atomic number: "),scanf("%llu",&n);//Ask for the value of the atomic number
 			if(n)//Break if the number is non-zero
 				break;
 			printf("\nThere is no atom with an atomic number of 0!\n");//Alert if the given number is zero
@@ -46,12 +46,12 @@ int main(){
 				}
 			}
 			for(size_t i=0;i++<layers;){//Show the layers and free the arrangement array
-				printf("%u: %u",i,layerSum(arrangement[i-1],i));//Show the number of and the number of electrons in the current layer
+				printf("%u: %llu",i,layerSum(arrangement[i-1],i));//Show the number of and the number of electrons in the current layer
 				if(layerSum(arrangement[i-1],i)==i*i*2)//Indicate if the layer is full
 					printf(" Full");
 				printf("\n");//Go to the next line
 				for(size_t j=0;j<i;j++){//Show the sub-layers
-					printf("\t%u: %u",j,arrangement[i-1][j]);//Show the number of and the number of electrons in the current sub-layer
+					printf("\t%u: %llu",j,arrangement[i-1][j]);//Show the number of and the number of electrons in the current sub-layer
 					if(arrangement[i-1][j]==j*4+2)//Indicate if the sub-layer is full
 						printf(" Full");
 					printf("\n");//Go to the next line
